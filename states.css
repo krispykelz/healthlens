@@ -1,0 +1,42 @@
+/* HealthLens — state explorer. Reuses .state-grid/.state-tile/.panel/.bar-* from index.html */
+.hl-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;align-items:start}
+.state-tile{transition:background .15s,color .15s,transform .15s}.state-tile:hover{transform:translateY(-1px)}
+.state-tile.active{box-shadow:0 0 0 3px #CFE6DA}
+.state-tile:focus-visible,.rk-row:focus-visible,.toggle:focus-visible{outline:2px solid #478B77;outline-offset:2px}
+.sd-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.sd-top h3{margin:6px 0 0;font-size:26px;letter-spacing:-.8px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{background:#E9F4ED;color:#39735E;font-size:10px;font-weight:800;border-radius:6px;padding:6px 8px;white-space:nowrap}
+.hl-metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.hl-metric{background:#F8FAF8;border:1px solid #E5ECE7;border-radius:12px;padding:15px}
+.hl-metric small{display:block;color:#72857C;font-size:10px;font-weight:750}
+.hl-metric strong{display:block;font-size:30px;letter-spacing:-1.2px;margin:6px 0 2px;font-variant-numeric:tabular-nums}
+.hl-metric .unit{font-size:10px;color:#72857C}
+.hl-metric .delta{font-size:11px;font-weight:750;color:#2D7764;margin-top:8px}
+.hl-metric .delta.mort{color:#C0624A}
+.hl-metric .counts{font-size:10px;color:#72857C;margin-top:6px;line-height:1.5}
+.sd-block{margin-top:24px;padding-top:20px;border-top:1px solid #E6EDE8}
+.sd-block h4{margin:0 0 4px;font-size:13px;letter-spacing:-.2px}
+.sd-block .cap{font-size:10px;color:#71837A;line-height:1.55;margin:6px 0 0}
+.trend svg{width:100%;height:auto;display:block;margin-top:10px}
+.tl-grid{stroke:#E4ECE6;stroke-width:1}.tl-t{fill:#71837A;font-size:10px;font-family:inherit}
+.tl-inc{fill:none;stroke:#2F7D68;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.tl-mort{fill:none;stroke:#E98970;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.tl-key{display:flex;gap:16px;font-size:10px;color:#71837A;margin-top:8px;flex-wrap:wrap}.tl-key i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.sd-bars{display:flex;flex-direction:column;gap:13px;margin-top:14px}
+.sd-bars .bar-row{grid-template-columns:minmax(110px,1fr) 2fr 56px}
+.sd-bars .bar-row .bar-fill{background:#4C9077}
+.rank-panel{margin-top:20px}
+.rank-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.rank-list{max-height:440px;overflow:auto;display:flex;flex-direction:column;gap:2px;margin-top:16px;padding-right:6px}
+.rk-row{display:grid;grid-template-columns:26px 130px 1fr 52px;gap:10px;align-items:center;border:0;background:transparent;padding:7px 8px;border-radius:8px;cursor:pointer;text-align:left;color:inherit;font-size:11px}
+.rk-row:hover{background:#F1F7F2}.rk-row.active{background:#E3F1E8}.rk-row.active .rk-name{font-weight:850}
+.rk-n{color:#71837A;font-variant-numeric:tabular-nums}.rk-v{text-align:right;font-weight:850;font-variant-numeric:tabular-nums;color:#23483E}
+.rank-list.mort .bar-fill{background:#E98970}.rk-row.active .bar-fill{filter:brightness(.82)}
+@media(max-width:800px){.hl-layout{grid-template-columns:1fr}.rk-row{grid-template-columns:24px 96px 1fr 46px;gap:8px}}
+@media(max-width:520px){.hl-metric strong{font-size:25px}.sd-top h3{font-size:22px}}
+@media(prefers-color-scheme:dark){
+ .state-tile{background:#192923;border-color:#385247;color:#C3D6CA}.state-tile:hover,.state-tile.active{background:#367A68;border-color:#367A68;color:#fff}.state-tile.active{box-shadow:0 0 0 3px #254B3F}
+ .state-explorer{background:#14231D;border-color:#2B4139}.state-detail{background:#192923;border-color:#2B4139}.state-data-note{background:#1B3026;border-color:#2B4139;color:#A0B5AA}
+ .chip{background:#243F34;color:#A8D9BC}.hl-metric{background:#14231D;border-color:#2B4139}.hl-metric small,.hl-metric .unit,.hl-metric .counts,.sd-block .cap,.tl-t,.tl-key,.rk-n{color:#A0B5AA;fill:#A0B5AA}
+ .hl-metric .delta{color:#7FD0AE}.hl-metric .delta.mort{color:#F2A28D}.sd-block{border-color:#2B4139}.tl-grid{stroke:#2B4139}
+ .rk-row:hover{background:#1F342A}.rk-row.active{background:#25422F}.rk-v{color:#D2E4D9}}
